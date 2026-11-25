@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect x="4" y="4" width="192" height="192" rx="32" fill="#132D4F"/>
+  <path d="M45 165 L45 90 Q45 45 100 45 Q155 45 155 90 L155 165" fill="none" stroke="#C8A24A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M62 165 L62 98 Q62 62 100 62 Q138 62 138 98 L138 165" fill="none" stroke="#C8A24A" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+  <text x="100" y="125" text-anchor="middle" font-family="'Courier New',monospace" font-size="32" font-weight="700" fill="#C8A24A" opacity="0.9">&lt;/&gt;</text>
+</svg>

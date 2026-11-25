@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="avBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="avGlow">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <rect width="400" height="400" rx="200" fill="url(#avBg)"/>
+  
+  <!-- Outer glowing ring -->
+  <circle cx="200" cy="200" r="185" fill="none" stroke="url(#ringGrad)" stroke-width="4" filter="url(#avGlow)"/>
+  <circle cx="200" cy="200" r="175" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Developer Tech Emblem -->
+  <g transform="translate(200, 190)" text-anchor="middle">
+    <!-- Code Bracket Left -->
+    <path d="M-60,-45 L-95,0 L-60,45" stroke="#38bdf8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Code Bracket Right -->
+    <path d="M60,-45 L95,0 L60,45" stroke="#818cf8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Slash / Spark -->
+    <line x1="-15" y1="45" x2="15" y2="-45" stroke="#f43f5e" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Central Monogram -->
+    <circle cx="0" cy="0" r="28" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="0" y="10" font-family="system-ui, sans-serif" font-weight="900" font-size="26" fill="#f8fafc">HM</text>
+  </g>
+  
+  <!-- Status Indicator Badge -->
+  <circle cx="310" cy="310" r="22" fill="#0f172a" stroke="#22c55e" stroke-width="3"/>
+  <circle cx="310" cy="310" r="14" fill="#22c55e"/>
+</svg>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="معرض أعمال مطور ومبرمج مواقع وتطبيقات ويب سحابية — متخصص في بناء منصات SaaS، حلول الويب السريعة وتصميم واجهات UI/UX حديثة.">
+  <meta name="keywords" content="معرض اعمال, مطور ويب, مبرمج مواقع, واجهات مستخدم, بصمة أندلسية, استوديو الحرم, Cloudflare Workers, SaaS, React, Next.js, RTL">
+  <meta name="author" content="هشام مدينة | بصمة أندلسية">
+  <meta name="theme-color" content="#07090e">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="معرض الأعمال | مطور ومبرمج مواقع وتطبيقات الويب">
+  <meta property="og:description" content="استعرض أفضل المشاريع والمنصات السحابية وحلول الويب الحديثة بأعلى معايير الأداء والجمال.">
+
+  <title>معرض الأعمال | مطور ومبرمج مواقع وتطبيقات ويب سحابية</title>
+
+  <!-- Google Fonts: Cairo for Arabic & Plus Jakarta Sans for Latin numbers/code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="شريط التنقل الرئيسي">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand">
+        <div class="brand-icon">
+          <span>هـ</span>
+        </div>
+        <div class="brand-info">
+          <span class="brand-name">هشام مدينة</span>
+          <span class="brand-tagline">مطور ويب & صانع حلول رقمية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
+        <li><a href="#projects" class="nav-link">معرض الأعمال</a></li>
+        <li><a href="#contact" class="nav-link">تواصل معي</a></li>
+      </ul>
+
+      <!-- Action Items -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button (Dark / Light) -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="التبديل إلى الوضع النهاري" title="تبديل المظهر">
+          <!-- Moon Icon for Dark Mode -->
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon for Light Mode -->
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="btn-primary btn-header-cta">
+          <span>ابدأ مشروعك</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+
+        <!-- Mobile Drawer Menu Button -->
+        <button id="mobileToggle" class="mobile-toggle" aria-label="فتح القائمة المتنقلة">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer Menu -->
+  <aside id="mobileDrawer" class="mobile-menu-drawer" aria-label="القائمة الجانبية للشاشات الصغيرة">
+    <div class="mobile-drawer-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <span>هـ</span>
+        </div>
+        <span class="brand-name">هشام مدينة</span>
+      </div>
+      <button id="closeDrawerBtn" class="close-drawer-btn" aria-label="إغلاق القائمة">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li>
+        <a href="#hero" class="mobile-nav-link active">
+          <span>الرئيسية</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#projects" class="mobile-nav-link">
+          <span>معرض الأعمال</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="mobile-nav-link">
+          <span>تواصل معي</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="#contact" class="btn-drawer-cta">
+        <span>ابدأ مشروعك الآن</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14"></path>
+          <path d="M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content -->
+          <div class="hero-content">
+            <!-- Availability Badge -->
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span>متاح لاستقبال المشاريع والعمل الحر</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="hero-title">
+              أصنع تجارب ويب <span class="text-gradient">سريعة وحديثة</span> تنبض بالحياة
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-desc">
+              مبرمج ومطور ويب متكامل ومصمم واجهات رقمية. متخصص في تحويل الأفكار الطموحة إلى منصات سحابية متطورة (SaaS)، مواقع شركات أنيقة، وأدوات ويب لحظية تجمع بين سلاسة الاستخدام وسرعة الاستجابة القصوى.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">
+                <span>استكشف معرض الأعمال</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+              </a>
+              <a href="#contact" class="btn-secondary">
+                <span>تواصل معي مباشرة</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Stats Counters -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-target="5">
+                  <span class="stat-plus">+</span>
+                  <span class="counter-val">0</span>
+                </div>
+                <span class="stat-label">سنوات من الخبرة والشغف</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="25">
+                  <span class="stat-plus">+</span>
+                  <span class="counter-val">0</span>
+                </div>
+                <span class="stat-label">مشروعاً وتطبيقاً مكتمل</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="100">
+                  <span class="stat-plus">%</span>
+                  <span class="counter-val">0</span>
+                </div>
+                <span class="stat-label">نسبة رضا وثقة العملاء</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="99">
+                  <span class="stat-plus">+</span>
+                  <span class="counter-val">0</span>
+                </div>
+                <span class="stat-label">معدل سرعة Core Web Vitals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Card -->
+          <div class="hero-visual">
+            <div class="developer-card">
+              <!-- Top Profile Info -->
+              <div class="card-top">
+                <div class="avatar-wrapper">
+                  <div class="avatar-inner" style="overflow: hidden; padding: 0;">
+                    <img src="assets/images/avatar.svg" alt="هشام مدينة" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                </div>
+                <div class="card-title-group">
+                  <h3>هشام مدينة</h3>
+                  <p>Full-Stack Developer & UI Architect</p>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="dev-tags">
+                <span class="dev-tag">React / Next.js</span>
+                <span class="dev-tag">Cloudflare Workers</span>
+                <span class="dev-tag">Tailwind CSS</span>
+                <span class="dev-tag">RTL Architecture</span>
+                <span class="dev-tag">Edge Computing</span>
+              </div>
+
+              <!-- Code Preview Mockup -->
+              <div class="code-preview">
+                <div><span class="code-keyword">const</span> developer = {</div>
+                <div style="padding-left: 1.25rem;">name: <span class="code-string">'Hichem Madina'</span>,</div>
+                <div style="padding-left: 1.25rem;">focus: [<span class="code-string">'SaaS'</span>, <span class="code-string">'Cloud'</span>, <span class="code-string">'UI/UX'</span>],</div>
+                <div style="padding-left: 1.25rem;">passion: <span class="code-string">'Crafting delightful web apps'</span>,</div>
+                <div style="padding-left: 1.25rem;">available: <span class="code-prop">true</span></div>
+                <div>};</div>
+                <div style="margin-top: 0.5rem;"><span class="code-function">buildDreamProject</span>(developer);</div>
+              </div>
+
+              <!-- Floating decorative pill 1 -->
+              <div class="floating-badge badge-1">
+                <div class="badge-icon-wrap badge-icon-react">⚛</div>
+                <div>
+                  <div class="badge-text-title">منصات SaaS</div>
+                  <div class="badge-text-sub">Next.js & React</div>
+                </div>
+              </div>
+
+              <!-- Floating decorative pill 2 -->
+              <div class="floating-badge badge-2">
+                <div class="badge-icon-wrap badge-icon-cf">⚡</div>
+                <div>
+                  <div class="badge-text-title">خوادم Edge فائقة السرعة</div>
+                  <div class="badge-text-sub">Cloudflare Workers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="section-badge">معرض الأعمال المميزة</span>
+          <h2 class="section-title">مشاريع صُممت لتصنع الفارق</h2>
+          <p class="section-desc">
+            نماذج حية لمشاريع حقيقية قمت بتطويرها وتصميمها، تتنوع بين المنصات السحابية المتكاملة، المواقع الرسمية، والأدوات فائقة السرعة.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters" role="tablist" aria-label="تصنيفات المشاريع">
+          <button class="filter-btn active" data-filter="all">جميع المشاريع (3)</button>
+          <button class="filter-btn" data-filter="saas">منصات سحابية SaaS</button>
+          <button class="filter-btn" data-filter="agency">مواقع وشركات رقمية</button>
+          <button class="filter-btn" data-filter="tools">أدوات وسيرفرلس</button>
+        </div>
+
+        <!-- Dynamic Projects Grid (Managed by main.js) -->
+        <div id="projectsGrid" class="projects-grid">
+          <!-- Fallback Initial Markup for Search Engines & Instant Load -->
+          
+          <!-- Project 1: Studio Al-Haram -->
+          <article class="project-card" data-category="saas">
+            <div class="card-browser-bar">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>https://studio.basmatandalusia.cc</span>
+              </div>
+              <span style="width: 32px;"></span>
+            </div>
+            <div class="project-banner banner-studio">
+              <span class="project-category-badge">منصات سحابية SaaS</span>
+              <img src="assets/images/studio-hero.jpg" alt="استوديو الحرم" class="project-banner-img" loading="lazy">
+              <div class="banner-overlay-content" style="background: linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.45) 60%, transparent 100%);">
+                <div class="banner-logo-wrapper">
+                  <img src="assets/images/studio-logo.png" alt="شعار استوديو الحرم" style="width: 38px; height: 38px; object-fit: contain;">
+                </div>
+                <h4 style="color: #ffffff; font-weight: 800; font-size: 1.15rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">استوديو الحرم</h4>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                <span>استوديو الحرم — منصة إدارة التسجيلات الصوتية</span>
+              </h3>
+              <p class="project-desc">
+                منصة سحابية متكاملة لإدارة تسجيلات القرّاء والكتب، مراحل التدقيق والمونتاج الصوتي، ومتابعة النشر والمستحقات في بيئة عمل موحدة.
+              </p>
+              <ul class="project-highlights">
+                <li class="project-highlight-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>إدارة هرمية للقرّاء، المصاحف، الكتب، وفصول التسجيل الصوتي.</span>
+                </li>
+                <li class="project-highlight-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>تتبع دقيق لمراحل التصحيح اللغوي، المونتاج الصوتي، والاعتماد.</span>
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag-item">Next.js</span>
+                <span class="tag-item">React</span>
+                <span class="tag-item">Tailwind CSS</span>
+                <span class="tag-item">Audio Flow</span>
+                <span class="tag-item">SaaS Architecture</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://studio.basmatandalusia.cc/" target="_blank" rel="noopener noreferrer" class="btn-card-visit">
+                  <span>زيارة الموقع المباشر</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="btn-card-details" onclick="openProjectModal('studio-alharam')">
+                  <span>التفاصيل</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Basmat Andalusia -->
+          <article class="project-card" data-category="agency">
+            <div class="card-browser-bar">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>https://www.basmatandalusia.cc</span>
+              </div>
+              <span style="width: 32px;"></span>
+            </div>
+            <div class="project-banner banner-basmat">
+              <span class="project-category-badge">مواقع وشركات رقمية</span>
+              <img src="assets/images/basmat-preview.svg" alt="بصمة أندلسية" class="project-banner-img" loading="lazy">
+              <div class="banner-overlay-content" style="background: linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.45) 60%, transparent 100%);">
+                <div class="banner-logo-wrapper">
+                  <img src="assets/images/basmat-favicon.svg" alt="شعار بصمة أندلسية" style="width: 38px; height: 38px; object-fit: contain;">
+                </div>
+                <h4 style="color: #ffffff; font-weight: 800; font-size: 1.15rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">بصمة أندلسية</h4>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                <span>بصمة أندلسية — حلول رقمية وتطوير ويب احترافي</span>
+              </h3>
+              <p class="project-desc">
+                البوابة الرسمية لشركة بصمة أندلسية للحلول البرمجية، متخصصة في تطوير المواقع وتطبيقات الويب المخصصة وتصميم واجهات UI/UX حديثة.
+              </p>
+              <ul class="project-highlights">
+                <li class="project-highlight-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>تصميم بصري راقٍ وعصري متوافق بنسبة 100% مع كافة الشاشات.</span>
+                </li>
+                <li class="project-highlight-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>أداء فائق وتحقيق أعلى درجات معايير Core Web Vitals في السرعة.</span>
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag-item">Modern JS</span>
+                <span class="tag-item">Responsive UI</span>
+                <span class="tag-item">SEO Architecture</span>
+                <span class="tag-item">Core Web Vitals</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://www.basmatandalusia.cc/" target="_blank" rel="noopener noreferrer" class="btn-card-visit">
+                  <span>زيارة الموقع المباشر</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="btn-card-details" onclick="openProjectModal('basmat-andalusia')">
+                  <span>التفاصيل</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: WebP Converter -->
+          <article class="project-card" data-category="tools">
+            <div class="card-browser-bar">
+              <div class="browser-dots">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>https://converter.hichemmadina.workers.dev</span>
+              </div>
+              <span style="width: 32px;"></span>
+            </div>
+            <div class="project-banner banner-converter">
+              <span class="project-category-badge">أدوات وسيرفرلس</span>
+              <img src="assets/images/converter-preview.svg" alt="WebP Converter" class="project-banner-img" loading="lazy">
+              <div class="banner-overlay-content" style="background: linear-gradient(to top, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.45) 60%, transparent 100%);">
+                <div class="banner-logo-wrapper">
+                  <span style="font-size: 2rem;">⚡</span>
+                </div>
+                <h4 style="color: #ffffff; font-weight: 800; font-size: 1.15rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">محول الصور WebP</h4>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                <span>محول صيغ الصور الفوري WebP Converter</span>
+              </h3>
+              <p class="project-desc">
+                أداة ويب سحابية فائقة السرعة لتحويل وضغط الصور بصيغة WebP معتمدة على Cloudflare Workers و Edge Computing لمعالجة فورية.
+              </p>
+              <ul class="project-highlights">
+                <li class="project-highlight-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>معالجة وتحويل لحظي دون تأخير بالاعتماد على حوسبة الحافة (Edge).</span>
+                </li>
+                <li class="project-highlight-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>توفير يصل إلى 85% من حجم الصور دون فقدان ملحوظ للجودة.</span>
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="tag-item">Cloudflare Workers</span>
+                <span class="tag-item">Serverless</span>
+                <span class="tag-item">Edge Computing</span>
+                <span class="tag-item">Canvas API</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://converter.hichemmadina.workers.dev/" target="_blank" rel="noopener noreferrer" class="btn-card-visit">
+                  <span>زيارة الموقع المباشر</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="btn-card-details" onclick="openProjectModal('webp-converter')">
+                  <span>التفاصيل</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Collaboration Section -->
+
+    <section id="contact" class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">تواصل معي</span>
+          <h2 class="section-title">هل لديك فكرة مشروع ترغب في تنفيذها؟</h2>
+          <p class="section-desc">
+            أنا هنا لمساعدتك في بناء وتطوير مشروعك القادم بأعلى جودة واحترافية. دعنا نتحدث الآن ونبدأ العمل معاً!
+          </p>
+        </div>
+
+        <div class="contact-card-wrapper">
+          <!-- Info Column -->
+          <div class="contact-info-side">
+            <div>
+              <h3 class="contact-info-title">معلومات الاتصال المباشر</h3>
+              <p class="contact-info-desc">
+                يسعدني دائماً النقاش حول المشاريع الجديدة، استشارات التطوير، أو فرص التعاون المثمرة.
+              </p>
+
+              <div class="contact-methods">
+                <!-- Method 1: Email -->
+                <div class="contact-method-item" onclick="copyToClipboard('contact@basmatandalusia.cc', 'تم نسخ البريد الإلكتروني بنجاح! ✉️')" style="cursor: pointer;" title="انقر لنسخ البريد">
+                  <div class="contact-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>البريد الإلكتروني (انقر للنسخ)</h4>
+                    <p>contact@basmatandalusia.cc</p>
+                  </div>
+                </div>
+
+                <!-- Method 2: Website / Brand -->
+                <a href="https://www.basmatandalusia.cc/" target="_blank" rel="noopener noreferrer" class="contact-method-item">
+                  <div class="contact-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>موقع بصمة أندلسية</h4>
+                    <p>www.basmatandalusia.cc</p>
+                  </div>
+                </a>
+
+                <!-- Method 3: Cloudflare & SaaS Tools -->
+                <a href="https://studio.basmatandalusia.cc/" target="_blank" rel="noopener noreferrer" class="contact-method-item">
+                  <div class="contact-icon-box">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>منصة استوديو الحرم</h4>
+                    <p>studio.basmatandalusia.cc</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Status Indicator -->
+            <div style="margin-top: 2.5rem; display: flex; align-items: center; gap: 0.6rem; color: var(--accent-emerald); font-weight: 700; font-size: 0.9rem;">
+              <span class="status-dot"></span>
+              <span>متاح حالياً لاستلام مشاريع جديدة</span>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="contact-form-side">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="formName" class="form-label">الاسم الكامل *</label>
+                <input type="text" id="formName" class="form-input" placeholder="مثال: محمد أحمد" required>
+              </div>
+
+              <div class="form-group">
+                <label for="formEmail" class="form-label">البريد الإلكتروني أو رقم الهاتف *</label>
+                <input type="text" id="formEmail" class="form-input" placeholder="name@example.com أو 05xxxxxxxx" required>
+              </div>
+
+              <div class="form-group">
+                <label for="formService" class="form-label">نوع المشروع أو الخدمة المطلوبة</label>
+                <select id="formService" class="form-select">
+                  <option value="تطوير منصة سحابية SaaS">تطوير منصة سحابية متكاملة (SaaS)</option>
+                  <option value="تصميم وبرمجة موقع شركة احترافي">تصميم وبرمجة موقع شركة احترافي</option>
+                  <option value="بناء أداة ويب سحابية وحلول Edge">بناء أداة ويب سحابية وحلول Edge</option>
+                  <option value="تصميم واجهات UI/UX ودارك مود">تصميم واجهات UI/UX متقدمة ودارك مود</option>
+                  <option value="تحسين السرعة وتهيئة SEO">تسريع موقع حالي وتهيئة محركات البحث (SEO)</option>
+                  <option value="استشارة برمجية أو عمل حر آخر">استشارة برمجية أو عمل حر آخر</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label">تفاصيل ورسالة المشروع *</label>
+                <textarea id="formMessage" class="form-textarea" placeholder="اشرح باختصار فكرة مشروعك، الأهداف، وأي تفاصيل ترغب في مشاركتها..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary form-submit-btn">
+                <span>إرسال الرسالة الآن</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div>
+          <a href="#hero" class="brand">
+            <div class="brand-icon">
+              <span>هـ</span>
+            </div>
+            <div class="brand-info">
+              <span class="brand-name">هشام مدينة</span>
+              <span class="brand-tagline">بصمة أندلسية للحلول الرقمية</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            متخصص في تطوير وبناء تطبيقات الويب الحديثة، المنصات السحابية SaaS، وحلول الحوسبة السحابية السريعة بأعلى معايير الإتقان والأمان.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-links-title">روابط سريعة</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#projects">معرض الأعمال</a></li>
+            <li><a href="#contact">تواصل معي</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Projects Direct Links -->
+        <div>
+          <h4 class="footer-links-title">أعمال مميزة حية</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://studio.basmatandalusia.cc/" target="_blank" rel="noopener noreferrer">استوديو الحرم</a></li>
+            <li><a href="https://www.basmatandalusia.cc/" target="_blank" rel="noopener noreferrer">بصمة أندلسية</a></li>
+            <li><a href="https://converter.hichemmadina.workers.dev/" target="_blank" rel="noopener noreferrer">محول صيغ WebP</a></li>
+            <li><a href="#contact">طلب مشروع مخصص</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 هشام مدينة | بصمة أندلسية. جميع الحقوق محفوظة.</p>
+        <p>صُمم وطُوّر بكل فخر واعتزاز للويب العربي الحديث 🚀</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal Backdrop -->
+  <div id="projectModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalProjectTitle" style="font-size: 1.25rem; font-weight: 800;">تفاصيل المشروع</h3>
+        <button onclick="closeProjectModal()" class="modal-close-btn" aria-label="إغلاق النافذة">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="modalContent" class="modal-body">
+        <!-- Dynamically populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back-to-Top Button -->
+  <button id="backToTopBtn" class="back-to-top" aria-label="العودة إلى أعلى الصفحة">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript Bundle -->
+  <script src="js/main.js"></script>
+</body>
+</html>
